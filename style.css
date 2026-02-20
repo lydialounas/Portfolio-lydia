@@ -19,7 +19,7 @@
 
 /* display background dark color on navbar scroll */
 .navbarScroll.navbarDark{
-  background-color: rgba(130, 164, 187, 0.75);
+  background-color: #b6dcf5bf;
   backdrop-filter: blur(6px);
 }
 
@@ -125,14 +125,57 @@
 }
 
 /* contact */
-.contactColumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#contact{
+  background: var(--bg);
 }
-.contactColumn i {
-    color: #198754;
+
+.contactContent{
+  margin-top: 1rem;
 }
+
+/* colonnes contact */
+.contactColumn{
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius);
+  background: var(--bg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.contactColumn:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* icônes (FontAwesome) */
+.contactColumn i{
+  font-size: 3.2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* titres contact */
+.contactColumn h3{
+  font-weight: 800;
+  margin: 0.6rem 0;
+}
+
+/* texte */
+.contactColumn p{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ✅ ton lien “Voir mon LinkedIn” */
+#contact a{
+  color: #1e3a5f;          /* bleu élégant (pas le bleu “moche” par défaut) */
+  font-weight: 700;
+}
+#contact a:hover{
+  color: var(--primary);
+}
+
+/* =========================
+   RESPONSIVE
+========================
 /* ===== THEME (QA / bleu pétrole) ===== */
 :root{
   --nav: #036ea8;
@@ -140,20 +183,24 @@
   --card: #EAF4FF;
   --text: #062469;
 }
+ 
+
 
 /* NAVBAR */
 .navbarScroll{
-  background: linear-gradient(90deg, rgba(11,31,42,.92), rgba(20,184,166,.18));
+  background: linear-gradient(90deg, rgba(17, 108, 156, 0.92), rgba(20,184,166,.18));
   backdrop-filter: blur(10px);
 }
-.navbarScroll.navbarDark{
-  background: rgba(11,31,42,.92) !important;
-}
+
+
 .navbar-dark .navbar-nav .nav-link{
   color: rgba(255,255,255,.85);
   font-weight: 600;
 }
-.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:hover{
+ transform: scale(1.1);
+}
+
 .navbar-dark .navbar-nav .nav-link.active{
   color: blanchedalmond;
 }
@@ -161,8 +208,7 @@
   height: 45px;
   width: auto;
   border-radius: 10px;
-}
-/* ===== PORTFOLIO CARDS (comme ta capture) ===== */
+} 
 .card.portfolioContent{
   position: relative;
   height: 430px;
