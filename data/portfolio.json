@@ -1,20 +1,38 @@
 [
     {
+        "image": "Sophiebluel.png",
+        "title": "Sophie Bluel",
+        "text": "Création d'un site web dynamique pour une architecte d'intérieur en utilisant Java Script pour la manipulation des éléments du DOM et en communiquant avec l'API pour la création dynamique des éléments. Création de la page de connexion pour l'administrateur et de modales pour l'ajout/la suppression de projets.",
+        "link": "https://github.com/lydialounas/Sophie-Bluel"
+    },
+    {
+        "image": "427Events.png",
+        "title": "427 Events",
+        "text": "Conception d'une campagne de tests à partir du cahier de recette pour un site web en développement d'une agence d'événementiel. Identification, documentation et suivi des anomalies dans Jira. Campagne de tests exploratoires pour identifier des anomalies non couvertes par le cahier de recette. Clôture du projet avec la rédaction du bilan de campagne de test.",
+        "link": "https://github.com/lydialounas/724events"
+    },
+    {
+        "image": "EcoBlissBath.png",
+        "title": "Eco Bliss Bath",
+        "text": "Automatisation des tests fonctionnels du site web d'une start up de produits éco responsables. Rédaction des scripts d'automatisation en Java Script. Tests effectués avec Cypress. Rédaction d'un rapport détaillé sur le résultat des tests avec relevé des anomalies détectées.",
+        "link": "https://github.com/lydialounas/Logo-EcoBlissBath"
+    },
+    {
         "image": "image1.png",
         "title": "Booki",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "link": "#"
+        "text": "Création de la page d'accueil pour une agence de voyage en utilisant HTML et CSS. Intégration de l'interface responsive à partir des maquettes Figma et des spécificités du projet.",
+        "link": "https://github.com/lydialounas/Booki"
     },
     {
-        "image": "image2.png",
-        "title": "Mon Vieux grimoire",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "link": "#"
+        "image": "PayForge.png",
+        "title": "PayForge",
+        "text": "Définition d'une stratégie de test pour une application de gestion financière avant sa mise en production. Analyse des spécifications fonctionnelles, définition d'une stratégie de test, planification des tests selon les sprints définis par l'approche Agile, et rédaction d'un cahier de recette.",
+        "link": "https://github.com/lydialounas/PayForge"
     },
     {
-        "image": "image3.png",
+        "image": "Kasa.png",
         "title": "Kasa",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "link": "#"
+        "text": "Initialisation d'une application de location de logements avec Create React App pour l'implémentation du front end. Création de composants dynamiques avec React et configuration de la navigation entre les pages de l'application avec React Router.",
+        "link": "https://github.com/lydialounas/Projet-Casa"
     }
 ]

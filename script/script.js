@@ -1,105 +1,121 @@
-// Function to add the "navbarDark" class to the navbar on scroll
+// ===== NAVBAR: add "navbarDark" on scroll =====
 function handleNavbarScroll() {
-    const header = document.querySelector(".navbar");
-    window.onscroll = function () {
-        const top = window.scrollY;
-        if (top >= 100) {
-            header.classList.add("navbarDark");
-        } else {
-            header.classList.remove("navbarDark");
-        }
-    };
+  const header = document.querySelector(".navbar");
+  window.addEventListener("scroll", () => {
+    const top = window.scrollY;
+    if (top >= 100) {
+      header.classList.add("navbarDark");
+    } else {
+      header.classList.remove("navbarDark");
+    }
+  });
 }
 
-// Function to handle navbar collapse on small devices after a click
+// ===== NAVBAR: collapse on small devices after click =====
 function handleNavbarCollapse() {
-    const navLinks = document.querySelectorAll(".nav-item");
-    const menuToggle = document.getElementById("navbarSupportedContent");
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+  const menuToggle = document.getElementById("navbarSupportedContent");
 
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            new bootstrap.Collapse(menuToggle).toggle();
-        });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (!menuToggle) return;
+
+      const isShown = menuToggle.classList.contains("show");
+      if (!isShown) return;
+
+      const bsCollapse = bootstrap.Collapse.getInstance(menuToggle);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      } else {
+        new bootstrap.Collapse(menuToggle).hide();
+      }
     });
+  });
 }
 
-// Function to dynamically create HTML elements from the JSON file
+// ===== SKILLS: build cards from JSON =====
 function createSkillsFromJSON() {
-    const container = document.querySelector("#skills .container");
-    let row = document.createElement("div");
-    row.classList.add("row");
+  const container = document.querySelector("#skills .container");
+  if (!container) return;
 
-    // Load the JSON file
-    fetch("data/skills.json")
-        .then((response) => response.json())
-        .then((data) => {
-            // Iterate through the JSON data and create HTML elements
-            data.forEach((item, index) => {
-                const card = document.createElement("div");
-                card.classList.add("col-lg-4", "mt-4");
-                card.innerHTML = `
-                    <div class="card skillsText">
-                        <div class="card-body">
-                            <img src="./images/${item.image}" />
-                            <h4 class="card-title mt-3">${item.title}</h4>
-                            <p class="card-text mt-3">${item.text}</p>
-                        </div>
-                    </div>
-                `;
+  let row = document.createElement("div");
+  row.classList.add("row");
 
-                // Append the card to the current row
-                row.appendChild(card);
+  fetch("data/skills.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((item, index) => {
+        const col = document.createElement("div");
+        col.classList.add("col-lg-4", "mt-4");
 
-                // If the index is a multiple of 3 or it's the last element, create a new row
-                if ((index + 1) % 3 === 0 || index === data.length - 1) {
-                    container.appendChild(row);
-                    row = document.createElement("div");
-                    row.classList.add("row");
-                }
-            });
-        });
+        col.innerHTML = `
+          <div class="card skillsText">
+            <div class="card-body">
+              <img src="./images/${item.image}" alt="${item.title}" loading="lazy" />
+              <h3 class="card-title mt-3">${item.title}</h3>
+              <p class="card-text mt-3">${item.text}</p>
+            </div>
+          </div>
+        `;
+
+        row.appendChild(col);
+
+        if ((index + 1) % 3 === 0 || index === data.length - 1) {
+          container.appendChild(row);
+          row = document.createElement("div");
+          row.classList.add("row");
+        }
+      });
+    })
+    .catch((err) => console.error("Erreur chargement skills.json", err));
 }
-// Function to dynamically create HTML elements from the JSON file
+
+// ===== PORTFOLIO: build cards from JSON =====
 function createPortfolioFromJSON() {
-    const container = document.querySelector("#portfolio .container");
-    let row = document.createElement("div");
-    row.classList.add("row");
+  const container = document.querySelector("#portfolio .container");
+  if (!container) return;
 
-    // Load the JSON file
-    fetch("data/portfolio.json")
-        .then((response) => response.json())
-        .then((data) => {
-            // Iterate through the JSON data and create HTML elements
-            data.forEach((item, index) => {
-                const card = document.createElement("div");
-                card.classList.add("col-lg-4", "mt-4");
-                card.innerHTML = `
-                    <div class="card portfolioContent">
-                    <img class="card-img-top" src="images/${item.image}" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">${item.title}</h4>
-                        <p class="card-text">${item.text}</p>
-                        <div class="text-center">
-                            <a href="${item.link}" class="btn btn-success">Lien</a>
-                        </div>
-                    </div>
-                </div>
-                `;
+  let row = document.createElement("div");
+  row.classList.add("row");
 
-                // Append the card to the current row
-                row.apendChild(card);
+  fetch("data/portfolio.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((item, index) => {
+        const col = document.createElement("div");
+        col.classList.add("col-lg-4", "mt-4");
 
-                // If the index is a multiple of 3 or it's the last element, create a new row
-                if ((index + 1) % 3 === 0 || index === data.length - 1) {
-                    container.appendChild(row);
-                    row = document.createElement("div");
-                    row.classList.add("row");
-                }
-            });
-        });
+        col.innerHTML = `
+          <div class="card portfolioContent">
+            <img class="card-img-top" src="images/${item.image}" alt="${item.title}" loading="lazy">
+
+            <!-- overlay hover -->
+            <div class="card-desc">${item.text}</div>
+
+            <div class="card-body">
+              <h3 class="card-title">${item.title}</h3>
+              <div class="text-center">
+                <a href="${item.link}" class="btn btn-success" target="_blank" rel="noopener">
+                  Voir le projet
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+
+        row.appendChild(col);
+
+        if ((index + 1) % 3 === 0 || index === data.length - 1) {
+          container.appendChild(row);
+          row = document.createElement("div");
+          row.classList.add("row");
+        }
+      });
+    })
+    .catch((err) => console.error("Erreur chargement portfolio.json", err));
 }
 
-// Call the functions to execute the code
+// ===== RUN =====
 handleNavbarScroll();
 handleNavbarCollapse();
 createSkillsFromJSON();

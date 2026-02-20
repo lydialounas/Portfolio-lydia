@@ -25,8 +25,23 @@
         "text": "Identification des anomalies et correction d’un site existant, optimisation SEO et performance et publication d’un site en ligne"
     },
     {
-        "image": "test.png",
+        "image": "Test.png",
         "title": "Test",
-        "title ": "Tests exploratoires, unitaires et d’intégration, définition d’une stratégie de test et d’un rédaction d’un cahier de recette, automatisation de tests E2E et d’API"
-    }
+        "text": "Tests exploratoires, unitaires et d’intégration, définition d’une stratégie de test et d’un rédaction d’un cahier de recette, automatisation de tests E2E et d’API"
+    },
+    {
+  "image": "Cypress.png",
+  "title": "Cypress",
+  "text": "Automatisation des tests end-to-end et API, validation des parcours utilisateurs et intégration dans des pipelines CI/CD."
+},
+ {
+  "image": "squash.png",
+  "title": "Squash TM",
+  "text": "Conception et exécution de cas de test, gestion des campagnes, suivi des anomalies et traçabilité des exigences."
+},
+{
+  "image": "Jira.png",
+  "title": "Jira",
+  "text": "Gestion des tickets, suivi des anomalies, participation aux rituels Agile et collaboration avec les équipes métier et techniques."
+}
 ]
