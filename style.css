@@ -27,7 +27,7 @@
 .bgimage {
     height: 100vh;
     max-height: 900px;
-    background: url("images/thecsombre.jpg");
+    background: url("images/Fond.jpg");
     background-size: cover;
     position: relative;
 }
@@ -35,16 +35,15 @@
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.55); /* tu peux ajuster */
+  z-index: 0;                   /* <= IMPORTANT */
 }
 /* text css above hero image*/
 .hero_title {
     font-family: "special Elite";
     font-size: 4.5rem;
     font-weight: 700;
-    color:white;
-    background-color: black;
-     
+    color:white;    
 }
 
 .hero_desc {
@@ -52,11 +51,18 @@
     font-size: 2.5rem;
     font-weight: 500;
  margin-top: 10px;
- color: #ffffff;
-  background-color: black;
+ color: #ffffff;   
 }
 
+.hero_title,
+.hero_desc{
+  color: #fff;
+  background: none !important;
 
+  /* contour/halo qui épouse les lettres */
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.95))
+          drop-shadow(0 0 10px rgba(0,0,0,0.75))
+          drop-shadow(0 10px 22px rgba(0,0,0,0.60));}
 .hero-text{
   position: absolute;
   top: 50%;
