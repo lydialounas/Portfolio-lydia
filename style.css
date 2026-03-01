@@ -40,14 +40,14 @@
 }
 /* text css above hero image*/
 .hero_title {
-    font-family: "special Elite";
+    font-family: "Caveat", cursive;
     font-size: 4.5rem;
     font-weight: 700;
     color:white;    
 }
 
 .hero_desc {
-    font-family: "special Elite";
+    font-family: "Caveat", cursive;
     font-size: 2.5rem;
     font-weight: 500;
  margin-top: 10px;
@@ -181,7 +181,7 @@
 
 /* =========================
    RESPONSIVE
-========================
+========================*/
 /* ===== THEME (QA / bleu pétrole) ===== */
 :root{
   --nav: #036ea8;
