@@ -302,21 +302,17 @@ display: flex;
 .card.portfolioContent:hover .card-desc{
   transform: translateY(-75%);
 }
-/* =========================
-   MOBILE FIX (HERO)
-========================= */
+ 
 @media (max-width: 768px){
-
-  /* Le problème vient du height:100vh sur mobile */
+ 
   .bgimage{
-    height: auto !important;     /* au lieu de 100vh sur mobile */
-    min-height: 85vh;            /* garde un effet hero */
-    max-height: none;            /* enlève la limite 900px sur mobile */
-    padding: 110px 16px 40px;    /* espace sous la navbar */
+    height: auto !important;     
+    min-height: 85vh;            
+    max-height: none;            
+    padding: 110px 16px 40px;    
     background-position: center;
   }
-
-  /* Texte : plus petit et centré */
+ 
   .hero_title{
     font-size: 2.2rem !important;
     line-height: 1.15;
@@ -325,8 +321,7 @@ display: flex;
   .hero_desc{
     font-size: 1.2rem !important;
   }
-
-  /* Logos : un peu plus petits */
+ 
   .hero-certifications{
     gap: 12px;
     margin-top: 14px;
@@ -338,7 +333,7 @@ display: flex;
   }
 }
 
-/* Fix moderne pour la hauteur mobile (barre d’adresse) */
+ 
 @supports (height: 100svh){
   @media (max-width: 768px){
     .bgimage{ min-height: 100svh; }
