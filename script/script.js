@@ -78,10 +78,10 @@ function createPortfolioFromJSON() {
   let row = document.createElement("div");
   row.classList.add("row");
 
-  fetch("data/portfolio.json")
+  fetch("data/portfolio.json")   /* La fonction fetch() est utilisée pour effectuer une requête HTTP vers le fichier "data/portfolio.json". */
     .then((response) => response.json())
     .then((data) => {
-      data.forEach((item, index) => {
+      data.forEach((item, index) => {  /* La méthode forEach() est utilisée pour itérer sur chaque élément du tableau de données JSON. Pour chaque élément (représenté par "item"), une fonction est exécutée qui crée une carte de portfolio sur la page. L'index de chaque élément est également fourni, ce qui permet de déterminer quand ajouter une nouvelle ligne après chaque groupe de trois éléments. */
         const col = document.createElement("div");
         col.classList.add("col-lg-4", "mt-4");
 
@@ -103,7 +103,7 @@ function createPortfolioFromJSON() {
           </div>
         `;
 
-        row.appendChild(col);
+        row.appendChild(col);    
 
         if ((index + 1) % 3 === 0 || index === data.length - 1) {
           container.appendChild(row);

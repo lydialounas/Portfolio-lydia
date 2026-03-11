@@ -27,7 +27,7 @@
 .bgimage {
     height: 100vh;
     max-height: 900px;
-    background: url("images/sombrethech\ \(1\).webp");
+    background: url("images/A2G4lK6218bRcBWwSlsedCCqPHJvOIv1KKHMu0USYA2kbYRrsuE_MDVf8IPqEZZTUUfXa2JsvFEBYA_tdZWwkP8oILbhuX_y4NUhXPoSwow.jpg");
     background-size: cover;
     position: relative;
 }
@@ -35,7 +35,7 @@
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.55); /* tu peux ajuster */
+  background: rgba(0,0,0,0.35); /* tu peux ajuster */
   z-index: 0;                   /* <= IMPORTANT */
 }
 /* text css above hero image*/
